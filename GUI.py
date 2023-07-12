@@ -5,7 +5,15 @@ import json
 from datetime import datetime
 from collections import deque
 from queue import PriorityQueue
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
+chromedriver_path = 'chromedriver.exe'
+webdriver.chrome.driver = chromedriver_path
+chrome_options = Options()
+chrome_options.add_argument('--ignore-proxy')
+
+driver = webdriver.Chrome(options=chrome_options)
 
 class GUI:
     def __init__(self, fields, file_paths, start_file=None, checkpoint=None):
@@ -502,6 +510,7 @@ class GUI:
 
         self.unmodifiable_fields_variable[self.unmodifiable_fields_list[0]].set(str(self.lines[self.line_idx]))
         self.property_field_variable['link'].set(self.lines[0])
+        driver.get(self.property_field_variable['link'].get())
         self.update_property_fields(fields='all')
 
     def next(self):
@@ -771,6 +780,7 @@ f.close()
 file_paths = [i.decode('utf-8') for i in file_paths]
 file_paths = [i.strip('\n') for i in file_paths]
 file_paths = [i.strip('\r') for i in file_paths]
+file_paths = ['docs/' + i for i in file_paths]
 
 print(file_paths)
 
