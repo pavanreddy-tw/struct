@@ -1,0 +1,25 @@
+This is File 2
+Note
+You must confifure the SSO authentication option in the CMC for the tenant you want to use. Refer to Configure SSO for more information.
+After signing in, you will be directed to the Incorta Welcome homepage, where you can select the Data Wizard.
+The Data Wizard is an interactive tool that you can use create an external data source, local data file, or local data folder. It also allows you to create a physical schema, load data, and start building insights through easy sequential steps.
+Create a Data Source or File
+With the Data Manager, you can create and manage External Data Sources and Local Data Files.
+External Data Source An External Data Source is an object in a tenant with defined properties for using a specific connector. To learn more about an external data source, review Concepts → External Data Source.
+Local Data File An uploaded file is a local data file and an uploaded folder is a local data folder. Typically, a local data file is a structured data file such as a Tab Separated Value file(.tsv), Comma Separated Value file (.csv), Microsoft Excel file (.xls, xlsx), or custom delimited file (.txt). To learn more about external data sources, review Concepts → Local Data File.
+Your Turn
+Let’s go through an example of creating a Data File for TechWorks Company. TechWorks would like to analyze its product sales data. We will continue to build on this example throughout the remainder of the guide. In this example, the product sales data for TechWorks is stored in a CSV file called Sales.csv. You can download the Sales.zip file from here to follow this example on your own.
+Here are the steps to create a local data file for Sales.csv:
+1.	In the Navigation bar, select Data.
+2.	In the Action bar, select + New → Add Data Source.
+3.	In the Choose a Data Source dialog, in Data Files, select Upload Data File.
+4.	In the Upload Data File dialog, select Drag and drop data file here to select the file from your PC.
+5.	In Finder or File Explorer, select Sales.csv. Select Open.
+6.	Once the file uploads successfully, it will appear on the Local Data Files tab.
+Create a physical schema fast
+A physical schema defines structured, physical data as tables. A physical schema can include join relationships to other tables, including alias tables and materialized views, as well as tables in other physical schemas.
+To view the available physical schemas, in the Navigation bar, select the Schema tab. In the Schema Manager, you can can use the Action bar to:
+•	Create a Schema
+•	Use the Schema Wizard
+•	Import Schemas
+•	Create a Session Variable of the type External Variable, Internal Variable, or Filter Expression

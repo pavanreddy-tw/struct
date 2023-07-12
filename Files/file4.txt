@@ -1,0 +1,169 @@
+This is File 4
+Your Turn
+Here are the steps to create a schema for the Sales.csv local data file using the Schema Wizard:
+1.	In the Navigation bar, select the Schema tab.
+2.	In the Action bar, select + New → Schema Wizard.
+1)	Step 1: Choose a Source
+I.	In the New Schema wizard, in Choose a Source, for Enter a Name, enter sch_Sales.
+II.	In Select a Data Source, select LocalFiles.
+III.	Select Next.
+2)	Step 2: Manage Tables
+I.	In the Edit Panel, select Sales.csv.
+II.	Select the checkbox to the left of the Sales table.
+III.	Change the Function of Customer_Id and Product_Id to key.
+3)	Step 3: Finalize
+I.	Leave the checkbox selected to Create joins between selected table if foreign key relationships are detected.
+II.	Select Create Schema.
+Load your Data
+To start using Incorta as a modern data analytics and data warehouse platform, Incorta must extract and load structured data from a Data Source or Data File.
+Use the Schema Designer to load data for a schema or a table in a schema. Loading typically encompasses both the extraction by the Loader Service and the loading into memory for the Analytics Service. For a schema load, you have the option to load a schema on demand or schedule when a schema loads. For a table load, you only have the option to load data on demand.
+For loading a schema on demand, there are three options:
+1.	Full
+2.	Incremental
+3.	Staging
+For loading on a table on demand, there are two options:
+•	Load table (Full)
+•	Load from Staging
+Your Turn
+In this example, you are going to perform a full load of the sch_Sales schema on demand. Here are the steps to load the sch_Schema:
+1.	In the Navigation bar, select the Schema tab.
+2.	In Schemas, select sch_Sales.
+3.	In the Schema Designer, in the Action bar, select Load → Load now → Full.
+4.	In the Data Loading dialog, select Load.
+5.	In the Context bar Schema Summary, verify that Last Load Status shows a timestamp, e.g, Feb 1, 2021 15:20:58.
+Review the Load Job
+You can view the load job details, including the status and the number of rows loaded per table to ensure a successful completion.
+Your Turn
+1.	In the Navigation bar, select Schema.
+2.	Select sch_Sales.
+3.	Under Last Load Status, select the timestamp, e.g., Feb 1, 2021 15:20:58.
+4.	In Job Details, for the Sales table, verify the following:
+1)	Load Type = F
+2)	Extracted = 918,843
+3)	Rejected = 0
+4)	Loaded = 918,843
+5)	Status = Success
+Explore your Data Now
+With the Analyzer, you can explore one or more schemas and analyze the data in the schema using a visualization. You can save a visualization as an insight on a new or an existing dashboard. There are several ways to invoke the Analyzer:
+1.	In the Schema Designer for a given schema, in the Action bar, select Explore Data.
+2.	In Content, in the Action bar, select + New → Add Dashboard.
+3.	For an existing dashboard, to add a new Insight, in the Action bar, select +.
+4.	For an existing Insight on a dashboard, in the Action menu
+1)	select Edit (pen icon).
+2)	or, select More Options (⋮ vertical ellipsis icon) → Edit.
+Your Turn
+For this example, invoke the Analyzer from the Schema Designer:
+1.	In the Navigation bar, select Schema.
+2.	Select sch_Sales.
+3.	In the Action bar, select Explore Data.
+The Insight panel shows the selected visualization. The default selecting is Listing Table. Simply select the downward arrow (V) to change the visualization type. The visualization selection determines the available trays within the Insight panel. From the Data panel, you can add one or more columns to a tray. When applicable, you can also add a formula to a tray. A column or formula in a tray is a Pill. Each pill has configurable properties. The parent tray determines the available properties of a pill. Some of the common trays available within the Insight panel are:
+1.	Grouping Dimension
+2.	Coloring Dimension
+3.	Measure
+4.	Individual Filter
+5.	Aggregate Filter
+Your Turn
+Create a KPI for TechWorks gross margin percent, applying a conditional format to display the KPI in green if Gross Margin Percent is greater than 50, or else in red.
+Add an insight
+1.	In the Insight panel, under Others, select KPI.
+2.	From the Data panel, drag and drop Add Formula to the Measure tray.
+3.	In the Formula Builder, enter the following: sum(SALES.SALES.AMOUNT_SOLD - SALES.SALES.COST_OF_GOODS) / sum(SALES.SALES.AMOUNT_SOLD)
+4.	Select Validate & Save.
+5.	Change the name of the formula to Gross Margin Percent.
+Edit the pill properties
+1.	Select the arrow to the right of Gross Margin Percent to open the Properties panel.
+1)	For Aggregation, select Formula.
+2)	For Format, select Percent.
+3)	In Conditional Formatting, select Add Conditional Format. In the Conditional Formatting panel,
+I.	For Operator, select >.
+II.	For Value, enter 50.
+III.	For Text Color, select green.
+4)	In Conditional Formatting, select Add Conditional Format. In the Conditional Formatting panel,
+I.	For Operator, select ≤.
+II.	For Value, enter 50.
+III.	For Text Color, select red.
+2.	Name the insight KPIs.
+3.	To save your first dashboard, In the Action bar, select Save.
+1)	In the Save as… dialog, select the Content folder in the tree.
+2)	Select Save.
+3)	In the Add Dashboard dialog, in Name, enter TechWorks Sales Dashboard.
+4)	Select Add.
+
+Create New Insights for your Dashboard
+With the Analyzer, you can add additional insights to your dashboard.
+Your Turn
+Create a radial bar insight that shows the top 10 TechWorks products by gross margin percent.
+Add an insight
+1.	In the Action bar, select +.
+2.	In the Data panel, select Manage Dataset.
+3.	In the Insight panel, under Charts, select Radial Bar.
+4.	From the Data panel, drag and drop Add Formula to the Measure tray.
+5.	In the Formula Builder, enter the following:sum(SALES.SALES.AMOUNT_SOLD - SALES.SALES.COST_OF_GOODS) / sum(SALES.SALES.AMOUNT_SOLD)
+6.	Select Validate & Save.
+7.	Change the name of the formula to Gross Margin Percent.
+8.	From the Data panel, drag and drop Product to the Grouping Dimension tray.
+9.	From the Data panel, drag and drop Category to the Coloring Dimension tray.
+Edit the pill properties
+1.	Select the arrow to the right of Gross Margin Percent to open the Properties panel.
+1)	For Aggregation, select Formula.
+2)	For Format, select Percent.
+2.	Select the arrow to the right of Product to open the Properties panel.
+3.	From the Data panel, drag and drop Add Formula to the Drag columns/formulas here tray in Sort By. The default is to sort Descending.
+4.	In the Formula Builder, enter the following:sum(SALES.SALES.AMOUNT_SOLD - SALES.SALES.COST_OF_GOODS) / sum(SALES.SALES.AMOUNT_SOLD)
+5.	Change the name of the formula to Gross Margin Percent.
+6.	Select Validate & Save.
+7.	Name the insight Top 10 Products by Gross Margin Percent. Edit the insight settings
+8.	In the Action bar, select Settings (gear icon).
+9.	In the Settings menu, set Max Rows to 10.
+10.	In the Action bar, select Save.
+
+View your Dashboard
+Add a Runtime Filter to your Dashboard
+The default behavior of a dashboard without any preconfigured dashboard filters is to coalesce all exposed dimensions from all insights on the dashboard into a list of column filters. In the dashboard Filter bar, there are controls and components that present this list of coalesced dimensions as column filters.
+Your Turn
+1.	Select Filter (funnel icon) from the Filter bar.
+2.	In the Filter dialog,
+1)	In the Column panel select Category.
+2)	In the Values panel,
+I.	From the Operator drop down list, select In.
+II.	From the values list, select the checkbox for Electronics.
+III.	Select Apply.
+Bookmark your Filters
+After you run filters on a dashboard, you can add a Bookmark to a dashboard to save a dashboard filter for later use.
+Your Turn
+1.	Select Bookmark (book icon) from the Filter bar.
+2.	Select + Add Bookmark.
+3.	In the Add Bookmark dialog, enter Electronics Sales for the bookmark.
+4.	Select the Set as Default checkbox, which will cause the filter to be applied to the dashboard when opened.
+5.	Select Add.
+6.	Select Close.
+Download an Insight
+You can download an insight to reference offline, including in presentations. There are different download file formats based on the insight type:
+1.	For chart insight types, the options are PNG, JPEG, PDF, and SVG.
+2.	For table insight types, the options are XLSX and CSV.
+Your Turn
+1.	For the Top 10 Products by Gross Margin Percent radial bar chart, select More Options (⋮ vertical ellipsis icon) for the insight.
+2.	Select Download as → PDF
+Next steps!
+So, what’s next? Share your insights with stakeholders either directly or via email. You can also schedule the dashboard to be sent at a future time.
+Share the Dashboard
+Share a dashboard with other users, email addresses, or groups, and provide them with either View, Share or Edit access to the dashboard.
+Your Turn
+1.	For the TechWorks Sales Dashboard, select the Share (vector icon) in the top right corner of the dashboard page.
+2.	Select Share Access.
+3.	In the Share dialog, in the With: field, enter the name of the user, email address, or group you would like to share the dashboard with, and select it from the results.
+4.	Select the eye icon to the right of the With: field to set the access level as Can View, Can Share, or Can Edit. The default value is Can View.
+5.	Select Share.
+6.	Select Close.
+Schedule Delivery of the Dashboard
+Schedule delivery of the dashboard to send the dashboard to other uses, email addresses, or groups at a future time. Set up the delivery of the dashboard on a recurring basis to proactively share dashboard updates with the recipients.
+Your Turn
+Let’s schedule the TechWorks Dashboard to be emailed on a weekly basis.
+1.	Select the Share icon in the top right corner of the dashboard page.
+2.	Select Schedule Delivery.
+3.	In the Schedule page, in Every, replace 1 with 7.
+4.	In Starting at, enter 8:00 AM, and select Ok.
+5.	Select Schedule.
+Upload More Data
+Keep going! You can upload more data into Incorta from a plethora of data sources, and create insights that include data from new and existing data sources. For more information on uploading and analyzing data, refer to the Data Manager document and Analyze Guide.
+

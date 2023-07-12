@@ -1,0 +1,58 @@
+{
+  "list": [
+    "id",
+    "title",
+    "content",
+    "category",
+    "link"
+  ],
+  "id": {
+    "name": "id",
+    "type": "numeric",
+    "height": "1",
+    "init":  "0",
+    "additional_functionality":  []
+  },
+  "title": {
+    "name": "title",
+    "type": "string",
+    "height": "1",
+    "init":  "",
+    "additional_functionality":  []
+  },
+  "content": {
+    "name": "content",
+    "type": "string",
+    "height": "5",
+    "init":  "",
+    "additional_functionality":  []
+  },
+  "subtitle": {
+    "name": "subtitle",
+    "type": "string",
+    "height": "1",
+    "init":  "",
+    "additional_functionality":  []
+  },
+  "subcontent": {
+    "name": "subcontent",
+    "type": "string",
+    "height": "1",
+    "init":  "",
+    "additional_functionality":  []
+  },
+  "category": {
+    "name": "category",
+    "type": "string",
+    "height": "1",
+    "init":  "",
+    "additional_functionality":  ["frequently_used", "recently_used"]
+  },
+  "link": {
+    "name": "link",
+    "type": "string",
+    "height": "1",
+    "init":  "",
+    "additional_functionality":  []
+  }
+}

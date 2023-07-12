@@ -1,0 +1,25 @@
+This is File 3
+Use the Schema Wizard to quickly create and define a schema in Incorta. Depending on the Data Source type, the Schema Wizard detects foreign key-to-primary table relationships and defines these as child-to-parent relationships in Incorta.
+The Schema Wizard consists of three steps:
+1.	Step 1: Choose a Data Source
+2.	Step 2: Manage Tables
+1)	In the Edit Panel, select the Data Source.
+2)	To select all the tables, select the Select All checkbox. Otherwise, select individual tables. You can also create a Custom SQL Table using a built-in SQL Editor.
+3)	Use the Table Editor to select and modify individual columns. With the Table Editor, you can
+I.	Specify Customize SQL for a table using the built-in SQL Editor
+II.	Select or deselect one or more columns
+III.	For a given column, specify the Incorta Label. The label value will show on dashboards by default.
+IV.	For a given column, specify the Incorta Type (essentially a Java data type)
+a)	date
+b)	double
+c)	integer
+d)	long
+e)	string
+f)	text
+g)	timestamp
+h)	null
+V.	For a column, specify the Incorta Function
+a)	Key — Enforces unique constraint and Incorta creates an internal index
+b)	Dimension — Use to describe a measure
+c)	Measure — For aggregations and calculations
+4)	Step 3: Finalize

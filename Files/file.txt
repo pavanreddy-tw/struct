@@ -1,0 +1,25 @@
+This is File 1
+Guides → Start
+Start ingesting and analyzing your data now! The Incorta Direct Data Platform™ is a unified data and analytics platform.
+Intended for an Incorta user that belongs to a group assigned the Super User role or a Super User for the tenant, this Start guide will walk you through each step to access and analyze your data, from signing in to creating and sharing dashboards.
+Sign in to the Incorta Analytics Service
+The first step to access your data is to sign in to the Incorta Analytics Service. The Analytics Service is a web user interface for administrators, developers, business users, and analysts. Typically, the division of labor breaks out as follows:
+1.	Super Users and schema developers create data sources.
+2.	Schema developers create physical schemas and logical business schemas.
+3.	Dashboard developers and power business analysts design, develop, and share dashboards.
+4.	Business users and data analysts are dashboard consumers.
+Your Turn
+To access the Incorta Analytics Service, log in to Incorta Cloud using either a Chrome or Firefox web browser, and then connect to your cluster. When the cluster is connected, select the Incorta button to open your instance in a new tab.
+When signing in to the Analytics Services, a user specifies a tenant. A tenant represents an organizational unit and contains:
+1.	Users
+2.	Groups
+3.	Data Sources and Files
+4.	Schemas, Business Schemas, and Session Variables
+5.	Alerts and Schedules
+6.	Dashboards
+Your Turn
+Sign in to Incorta.
+1.	In the sign in page, specify your Tenant, Username, and Password.
+2.	Select Sign In.
+3.	Or, Select the Use Single Sign-on button.
+4.	Specify your Tenant, and then select Continue.
